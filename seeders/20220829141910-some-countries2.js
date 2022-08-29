@@ -4,14 +4,14 @@ module.exports = {
   async up(queryInterface, Sequelize) {
     await queryInterface.bulkInsert("countries", [
       {
-        name: "uk",
-        capital: "London",
+        name: "China",
+        capital: "Beijing",
         createdAt: new Date(),
         updatedAt: new Date(),
       },
       {
-        name: "usa",
-        capital: "Washington DC",
+        name: "Japan",
+        capital: "Tokyo",
         createdAt: new Date(),
         updatedAt: new Date(),
       },
@@ -19,8 +19,6 @@ module.exports = {
   },
 
   async down(queryInterface, Sequelize) {
-    await queryInterface.bulkDelete("countries", { name: ["uk", "usa"] }, {});
+    await queryInterface.bulkDelete("countries", null, {});
   },
 };
-
-// npx sequelize-cli db:seed:undo --seed 20220829103203-some-countries.js
